@@ -13,5 +13,20 @@ pipeline {
                 '''
             }
         }
+        stage('test') {
+            steps {
+                bat '''
+                    echo " testing the pipeline"
+                '''
+            }
+        }
+        stage('verify') {
+            steps {
+                bat '''
+                    echo " veritying the pipeline"
+                '''
+            }
+        }
+        
     }
 }
