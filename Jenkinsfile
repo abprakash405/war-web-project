@@ -9,6 +9,7 @@ pipeline {
                     cd war-web-project
                     mvn clean package
                     copy target\\*.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps"
+                    echo " script completed"
                 '''
             }
         }
