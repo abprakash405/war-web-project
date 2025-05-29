@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build & Deploy') {
+            steps {
+                sh '''
+                    rm -rf war-web-project
+                    git clone https://github.com/abprakash405/war-web-project.git
+                    cd war-web-project
+                    mvn clean package
+                    cp -r target/wwp-1.0.0.war /opt/tomcat/apache-tomcat-9.0.105/webapps/
+                '''
+            }
+        }
+    }
+}
